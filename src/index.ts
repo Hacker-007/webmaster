@@ -1,47 +1,49 @@
-import express from 'express'
-import mongoose from 'mongoose'
-import dotenv from 'dotenv'
-import authRoutes from './routes/auth'
-import bcrypt from 'bcryptjs'
-import User from './models/user'
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import authRoutes from "./routes/auth";
+import bcrypt from "bcryptjs";
+import User from "./models/user";
+import cors from "cors";
 
-dotenv.config()
-const app = express()
-const port = process.env.PORT || 3000
+dotenv.config();
+const app = express();
+const port = process.env.PORT || 3000;
 
 mongoose.connect(
-    'mongodb://localhost:27017/user',
-    {
-        useCreateIndex: true,
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    },
-    () => console.log('Connected To The Database.')
-)
+	"mongodb://localhost:27017/user",
+	{
+		useCreateIndex: true,
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	},
+	() => console.log("Connected To The Database.")
+);
 
-app.use(express.json())
-app.use(authRoutes)
+app.use(cors());
+app.use(express.json());
+app.use(authRoutes);
 
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static(__dirname + '/public/'))
-    app.get(/.*/, (_, res) => res.sendFile(__dirname + '/public/index.html'))
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static(__dirname + "/public/"));
+	app.get(/.*/, (_, res) => res.sendFile(__dirname + "/public/index.html"));
 }
 
-app.listen(port, preloadData)
+app.listen(port, preloadData);
 
 function preloadData() {
-    User.deleteMany({}, async () => {
-        const salt = await bcrypt.genSalt(10)
-		const hashedPassword = await bcrypt.hash('Test', salt)
+	User.deleteMany({}, async () => {
+		const salt = await bcrypt.genSalt(10);
+		const hashedPassword = await bcrypt.hash("Test", salt);
 		const admin = User.build({
-			name: 'Admin',
-			email: 'admin@gmail.com',
+			name: "Admin",
+			email: "admin@gmail.com",
 			password: hashedPassword,
-			roles: ['User', 'Admin'],
-		})
+			roles: ["User", "Admin"],
+		});
 
-		await admin.save()
-    })
+		await admin.save();
+	});
 
-    console.log(`The Server Is Listening On Port ${port}.`)
+	console.log(`The Server Is Listening On Port ${port}.`);
 }

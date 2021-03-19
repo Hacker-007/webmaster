@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth";
+import bookingRoutes from "./routes/bookings";
 import bcrypt from "bcryptjs";
 import User from "./models/user";
 import cors from "cors";
@@ -11,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 mongoose.connect(
-	"mongodb://localhost:27017/user",
+	"mongodb://localhost:27017/webmaster",
 	{
 		useCreateIndex: true,
 		useNewUrlParser: true,
@@ -23,6 +24,7 @@ mongoose.connect(
 app.use(cors());
 app.use(express.json());
 app.use(authRoutes);
+app.use(bookingRoutes);
 
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static(__dirname + "/public/"));

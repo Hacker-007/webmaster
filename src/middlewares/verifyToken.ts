@@ -13,7 +13,8 @@ export default function (req: Request, res: Response, next: NextFunction) {
 			process.env.TOKEN_SECRET ||
 				"^&%kjhs*&KJha%@WElkj(a97JQJ!KjaMNakjsd5634Bjasd14asD"
 		);
-		req.body = verified;
+		
+		req.body['token'] = verified;
 		next();
 	} catch (err) {
 		res.status(403).send("Access Denied.");

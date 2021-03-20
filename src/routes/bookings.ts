@@ -1,6 +1,4 @@
 import express, { Request, Response } from "express";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
 import { newBookingValidation, getBookingValidation } from "../middlewares/validation";
 import Booking from "../models/booking";
 import verifyToken from "../middlewares/verifyToken";
@@ -37,6 +35,19 @@ bookingRouter.get("/booking/get", verifyToken, canAccess(["User"]), async (req: 
     });
 
     res.status(200).send(booking)
+});
+
+bookingRouter.get("/booking/all", verifyToken, canAccess(["User"]), async (req: Request, res: Response) => {
+    const { error } = getBookingValidation(req.body);
+    if (error) {
+        return res.status(400).send(error.details[0].message);
+    }
+
+    const bookings = await Booking.find({
+        username: req.body["token"].name,
+    });
+
+    res.status(200).send(bookings)
 });
 
 export default bookingRouter;

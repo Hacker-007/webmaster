@@ -1,8 +1,7 @@
-import { Request, Response, NextFunction } from "express";
-import jwt from "jsonwebtoken";
+const jwt = require("jsonwebtoken");
 
-export default function (req: Request, res: Response, next: NextFunction) {
-	const token = req.header("Authorization")?.split(" ")[1];
+module.exports = function (req, res, next) {
+	const token = req.header("Authorization").split(" ")[1];
 	if (!token) {
 		return res.status(403).send("Acess Denied.");
 	}

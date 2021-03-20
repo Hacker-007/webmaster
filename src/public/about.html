@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Medical Center</title>
+        <link
+            href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <!-- TODO: Change navigation buttons to anchor tags -->
+    </head>
+    <body>
+        <!-- TOP NAV BAR -->
+        <nav class="h-14 top-0 sticky mb-2">
+            <ul
+                class="w-full bg-indigo-600 flex flex-row justify-center items-center text-white opacity-75"
+            >
+                <li class="m-4 text-xl">
+                    <a href="/index.html">Home</a>
+                </li>
+                <li class="m-4 text-xl">
+                    <a href="/schedule.html">Schedule</a>
+                </li>
+                <li class="m-4 text-xl">
+                    <a href="/specialists.html">Specialists</a>
+                </li>
+                <li class="m-4 text-xl">
+                    <a href="/about.html">About</a>
+                </li>
+                <li class="absolute self-center right-0 m-2">
+                    <svg
+                        class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 412 232"
+                    >
+                        <path
+                            d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
+                            fill="#648299"
+                            fill-rule="nonzero"
+                        />
+                    </svg>
+                    <a
+                        href="/creds.html"
+                        class="cursor-pointer mr-4"
+                        id="login-button"
+                        >Login</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <div class="min-h-screen p-4">
+            <!-- WHAT WE DO / SPECIALIZATIONS -->
+            <div>
+                <h1 class="text-3xl font-semibold m-2">What We Do</h1>
+                <p class="m-2 text-gray-500">
+                    The Jaguar Clinic specializes in various fields: pediatrics,
+                    preventive healthcare, and cardiology. By using the newest
+                    and top of the line technologies, our doctors are able to
+                    protect your health and the health of your loved ones. Not
+                    only are our doctors experienced and well versed in their
+                    fields, they also provide top notch care for all your health
+                    needs. Join <a href="/booking">today!</a>
+                </p>
+                <!-- SRC: https://unsplash.com/photos/TDoPeUSOD1c -->
+                <img
+                    src="https://images.unsplash.com/photo-1576766125535-b04e15fd0273?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1000&q=80"
+                    class="mt-4 w-1/2 mx-auto"
+                />
+            </div>
+
+            <!-- AWARDS -->
+            <div class="mt-4">
+                <h1 class="text-3xl font-semibold m-2">Awards</h1>
+                <p class="m-2 text-gray-500">
+                    The Jaguar Clinic has recieved international awards for its
+                    work and contribution to healthcare.
+                </p>
+                <div class="grid-cols-3 grid gap-4">
+                    <div
+                        class="border border-gray-300 p-2 rounded-md text-center"
+                    >
+                        <h3>Healthcare Contribution Award</h3>
+                    </div>
+                    <div
+                        class="border border-gray-300 p-2 rounded-md text-center"
+                    >
+                        <h3>Doctor's Choice for Cardiology</h3>
+                    </div>
+                    <div
+                        class="border border-gray-300 p-2 rounded-md text-center"
+                    >
+                        <h3>Award for Exceptional Pediatrics</h3>
+                    </div>
+                    <div
+                        class="border border-gray-300 p-2 rounded-md text-center"
+                    >
+                        <h3>National Recognition for Preventive Healthcare</h3>
+                    </div>
+                    <div
+                        class="border border-gray-300 p-2 rounded-md text-center"
+                    >
+                        <h3>Pediatrics in International Doctors Group</h3>
+                    </div>
+                    <div
+                        class="border border-gray-300 p-2 rounded-md text-center"
+                    >
+                        <h3>Global Recognition for Pediatrics</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TODO: FAQ SEPERATE PAGE -->
+            <!-- CONTACT -->
+            <div class="mt-4 flex flex-row items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-semibold m-2">Contact Us</h1>
+                    <h3 class="text-xl font-semibold m-2 mt-4">Address</h3>
+                    <p class="m-2 text-gray-500">1530 Imaginary Lane</p>
+                    <p class="m-2 text-gray-500">North Creek, Washington</p>
+                    <h3 class="text-xl font-semibold m-2">Phone</h3>
+                    <p class="m-2 text-gray-500">206-123-1234</p>
+                    <h3 class="text-xl font-semibold m-2">Email</h3>
+                    <p class="m-2 text-gray-500">contactUs@jaguarclinic.org</p>
+                </div>
+                <div class="mr-4">
+                    <iframe
+                        width="400"
+                        height="250"
+                        frameborder="0"
+                        scrolling="no"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-122.22204208374025%2C47.79536964373464%2C-122.19140052795412%2C47.82456591234235&amp;layer=mapnik&amp;marker=47.8099698297153%2C-122.20672130584717"
+                    ></iframe
+                    ><small>
+                        <a
+                            href="https://www.openstreetmap.org/?mlat=47.8100&amp;mlon=-122.2067#map=15/47.8100/-122.2067"
+                            >View Larger Map</a
+                        ></small
+                    >
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./assets/loginButton.js"></script>
+</html>

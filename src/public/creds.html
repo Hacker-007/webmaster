@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Medical Center</title>
+        <link
+            href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    </head>
+    <body>
+        <!-- TOP NAV BAR -->
+        <nav class="h-14 top-0 sticky z-50">
+            <ul
+                class="w-full bg-indigo-600 flex flex-row justify-center items-center text-white opacity-75"
+            >
+                <li class="m-4 text-xl">
+                    <a href="/index.html">Home</a>
+                </li>
+                <li class="m-4 text-xl">
+                    <a href="/schedule.html">Schedule</a>
+                </li>
+                <li class="m-4 text-xl">
+                    <a href="/specialists.html">Specialists</a>
+                </li>
+                <li class="m-4 text-xl">
+                    <a href="/about.html">About</a>
+                </li>
+                <li class="absolute self-center right-0 m-2">
+                    <!-- This is an example component -->
+                    <!-- <div class="relative inline-flex"> -->
+                    <svg
+                        class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 412 232"
+                    >
+                        <path
+                            d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
+                            fill="#648299"
+                            fill-rule="nonzero"
+                        />
+                    </svg>
+                    <a
+                        href="/creds.html"
+                        class="cursor-pointer mr-4"
+                        id="login-button"
+                        >Login</a
+                    >
+                </li>
+            </ul>
+        </nav>
+        <!-- https://unsplash.com/photos/k7ll1hpdhFA -->
+        <div
+            class="min-h-screen min-w-full top-0 absolute flex flex-row items-center justify-center"
+            style="
+                background-image: linear-gradient(black, black),
+                    url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+                background-blend-mode: saturation;
+                background-size: cover;
+            "
+        >
+            <div
+                class="p-4 w-1/4 h-4/5 border-r-4 border-black bg-white text-center"
+            >
+                <h1 class="text-3xl font-semibold m-1">Sign in</h1>
+                <form id="siginin-form" class="m-2">
+                    <label for="uname">Username:</label>
+                    <input
+                        class="p-1 rounded-md border-2 border-indigo-600 m-1"
+                        type="text"
+                        id="uname"
+                        name="uname"
+                    /><br />
+                    <label for="pword">Password:</label>
+                    <input
+                        class="p-1 rounded-md border-2 border-indigo-600 m-1"
+                        type="password"
+                        id="pword"
+                        name="pword"
+                    /><br />
+                    <label for="email">Email:</label><br />
+                    <input
+                        class="p-1 rounded-md border-2 border-indigo-600 m-1"
+                        type="email"
+                        id="email"
+                        name="email"
+                    /><br />
+                    <input
+                    class="bg-green-400 p-2 rounded-md m-2 text-lg mb-1"
+                    type="submit"
+                    value="Sign up"
+                />
+                </form>
+            </div>
+            <div class="p-4 w-1/4 h-4/5 bg-white text-center">
+                <h1 class="text-3xl font-semibold m-1">Sign up</h1>
+                <form id="signup-form" class="m-2">
+                    <label for="uname">Username:</label>
+                    <input
+                        class="p-1 rounded-md border-2 border-indigo-600 m-1"
+                        type="text"
+                        id="uname"
+                        name="uname"
+                    /><br />
+                    <label for="pword">Password:</label>
+                    <input
+                        class="p-1 rounded-md border-2 border-indigo-600 m-1"
+                        type="password"
+                        id="pword"
+                        name="pword"
+                    /><br />
+                    <label for="email">Email:</label><br />
+                    <input
+                        class="p-1 rounded-md border-2 border-indigo-600 m-1"
+                        type="email"
+                        id="email"
+                        name="email"
+                    /><br />
+                    <input
+                    class="bg-green-400 p-2 rounded-md m-2 text-lg mb-1"
+                    type="submit"
+                    value="Sign up"
+                />
+            </form>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script src="./assets/creds.js"></script>
+    <script src="./assets/loginButton.js"></script>
+</html>

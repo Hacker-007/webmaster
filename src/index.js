@@ -1,11 +1,11 @@
-import express from "express";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import authRoutes from "./routes/auth";
-import bookingRoutes from "./routes/bookings";
-import bcrypt from "bcryptjs";
-import User from "./models/user";
-import cors from "cors";
+const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const authRoutes = require("./routes/auth");
+const bookingRoutes = require("./routes/bookings");
+const bcrypt = require("bcryptjs");
+const User = require("./models/user");
+const cors = require("cors");
 
 dotenv.config();
 const app = express();
@@ -26,10 +26,10 @@ app.use(express.json());
 app.use(authRoutes);
 app.use(bookingRoutes);
 
-if (process.env.NODE_ENV === "production") {
+// if (process.env.NODE_ENV === "production") {
 	app.use(express.static(__dirname + "/public/"));
 	app.get(/.*/, (_, res) => res.sendFile(__dirname + "/public/index.html"));
-}
+// }
 
 app.listen(port, preloadData);
 
@@ -37,7 +37,7 @@ function preloadData() {
 	User.deleteMany({}, async () => {
 		const salt = await bcrypt.genSalt(10);
 		const hashedPassword = await bcrypt.hash("Test", salt);
-		const admin = User.build({
+		const admin = new User({
 			name: "Admin",
 			email: "admin@gmail.com",
 			password: hashedPassword,

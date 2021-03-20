@@ -1,12 +1,12 @@
-import express, { Request, Response } from "express";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
-import { registerValidation, loginValidation } from "../middlewares/validation";
-import User from "../models/user";
+const express = require("express");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
+const { registerValidation, loginValidation } = require("../middlewares/validation");
+const User = require("../models/user");
 
 const authRouter = express.Router();
 
-authRouter.post("/register", async (req: Request, res: Response) => {
+authRouter.post("/register", async (req, res) => {
 	const { error } = registerValidation(req.body);
 	if (error) {
 		return res.status(400).send(error.details[0].message);
@@ -20,9 +20,9 @@ authRouter.post("/register", async (req: Request, res: Response) => {
 	const salt = await bcrypt.genSalt(10);
 	const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-	const user = User.build({
-		name: req.body.name as string,
-		email: req.body.email as string,
+	const user = new User({
+		name: req.body.name,
+		email: req.body.email,
 		password: hashedPassword,
 		roles: ["User"],
 	});
@@ -31,7 +31,7 @@ authRouter.post("/register", async (req: Request, res: Response) => {
 	res.status(201).send(savedUser);
 });
 
-authRouter.post("/login", async (req: Request, res: Response) => {
+authRouter.post("/login", async (req, res) => {
 	const { error } = loginValidation(req.body);
 	if (error) {
 		return res.status(400).send("Invalid Information.");
@@ -58,4 +58,4 @@ authRouter.post("/login", async (req: Request, res: Response) => {
 	res.status(200).send({ token });
 });
 
-export default authRouter;
+module.exports = authRouter;

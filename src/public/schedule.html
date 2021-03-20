@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <title>Schedule</title>
+    </head>
+    <body>
+        <nav class="h-1/12 top-0 fixed w-screen z-50">
+            <ul
+                class="w-full bg-indigo-600 flex flex-row justify-center items-center text-white opacity-75"
+            >
+                <li class="m-4 text-xl">
+                    <a href="/index.html">Home</a>
+                </li>
+                <li class="m-4 text-xl">
+                    <a href="/schedule.html">Schedule</a>
+                </li>
+                <li class="m-4 text-xl">
+                    <a href="/specialists.html">Specialists</a>
+                </li>
+                <li class="m-4 text-xl">
+                    <a href="/about.html">About</a>
+                </li>
+                <li class="absolute self-center right-0 m-2">
+                    <svg
+                        class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 412 232"
+                    >
+                        <path
+                            d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
+                            fill="#648299"
+                            fill-rule="nonzero"
+                        />
+                    </svg>
+                    <a
+                        href="/creds.html"
+                        class="cursor-pointer mr-4"
+                        id="login-button"
+                        >Login</a
+                    >
+                </li>
+            </ul>
+        </nav>
+        <div class="mt-16 h-11/12 flex flex-row items-center justify-center">
+            <div
+                class="p-4 flex flex-col items-center justify-content w-3/5 page"
+                id="schedule"
+            >
+                <h1 class="text-3xl font-semibold m-2">Schedule</h1>
+                <table class="table-auto w-full text-center">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="p-4">Monday</th>
+                            <th class="p-4">Tuesday</th>
+                            <th class="p-4">Wednesday</th>
+                            <th class="p-4">Thursday</th>
+                            <th class="p-4">Friday</th>
+                            <th class="p-4">Saturday</th>
+                            <th class="p-4">Sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-2">8:00 AM</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">9:00 AM</td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">10:00 AM</td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">11:00 AM</td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2">Open</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">12:00 PM</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2">Open</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">01:00 PM</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">02:00 PM</td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">03:00 PM</td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">04:00 PM</td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">05:00 PM</td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3 class="text-2xl font-semibold m-4">
+                    Book An Appointment Today!
+                </h3>
+                <button
+                    class="bg-green-400 p-2 rounded-md text-xl"
+                    id="book-now"
+                >
+                    Book Now!
+                </button>
+            </div>
+            <div
+                class="hidden p-4 flex flex-col items-center justify-content w-3/5 page"
+                id="book"
+            >
+                <h1 class="text-3xl font-semibold m-2">Booking Form</h1>
+                <table class="m-2 table-auto w-full text-center">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="p-4">Monday</th>
+                            <th class="p-4">Tuesday</th>
+                            <th class="p-4">Wednesday</th>
+                            <th class="p-4">Thursday</th>
+                            <th class="p-4">Friday</th>
+                            <th class="p-4">Saturday</th>
+                            <th class="p-4">Sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-2">8:00 AM</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">9:00 AM</td>
+                            <td class="p-2 open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">10:00 AM</td>
+                            <td class="p-2 open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">11:00 AM</td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">12:00 PM</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">01:00 PM</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 open-slot">Open</td>
+                            <td class="p-2 open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">02:00 PM</td>
+                            <td class="p-2 open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">03:00 PM</td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">04:00 PM</td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">05:00 PM</td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 cursor-pointer open-slot">Open</td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                            <td class="p-2 bg-indigo-600 opacity-75 text-white">
+                                Booked
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <form id="doctor-reason" class="m-2">
+                    <label for="reason">Reason:</label>
+                    <input
+                        class="p-1 rounded-md border-2 border-indigo-600 m-1"
+                        type="text"
+                        id="reason"
+                        placeholder="List any symptoms"
+                        name="reason"
+                    /><br />
+                    <label for="doctor">Doctor:</label>
+                    <select name="doctor" id="doctor">
+                        <option>Dr. John Doe</option>
+                        <option>Dr. John Doe</option>
+                        <option>Dr. Homer Harris</option>
+                        <option>Dr. Raul Grant</option>
+                        <option>Dr. Gladys Ortega</option>
+                        <option>Dr. Belinda Jones</option>
+                        <option>Dr. Luke Owens</option>
+                        <option>Dr. Evelyn Flores</option>
+                        <option>Dr. Tommy Gross</option>
+                        <option>Dr. Gail Wilkins</option>
+                        <option>Dr. Steve Hoffman</option>
+                        <option>Dr. Edna Howard</option>
+                    </select>
+                </form>
+                <button
+                    class="bg-green-400 p-2 rounded-md text-xl"
+                    id="book-submit"
+                >
+                    Book
+                </button>
+            </div>
+            <div class="w-2/5 p-6">
+                <!-- SOURCE: https://unsplash.com/photos/l-NIPb-9Njg -->
+                <img
+                    src="https://images.unsplash.com/photo-1584467735867-4297ae2ebcee?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=649&q=80"
+                    alt="Doctor in white lab coat and mask with stethoscope around neck"
+                    class="mx-auto"
+                />
+            </div>
+        </div>
+    </body>
+    <script src="./assets/schedule.js"></script>
+    <script src="./assets/loginButton.js"></script>
+</html>

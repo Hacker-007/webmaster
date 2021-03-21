@@ -97,10 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then((res) => res.json())
                 .then((res) => {
                     bookingData = res;
-                    let secondDoctor = document.getElementById(
-                        'ye-which-doctor'
-                    );
-                    secondDdoctor = doctor.options[doctor.selectedIndex].value;
+                    let secondDoctor = document.getElementById('which-doctor');
+                    secondDoctor = doctor.options[doctor.selectedIndex].value;
                     let secondTable = generateTable(res, secondDoctor, true);
                     secondTable.id = 'yes-edit';
                     document

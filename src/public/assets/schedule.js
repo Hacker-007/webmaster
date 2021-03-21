@@ -1,5 +1,3 @@
-const apiDomain = '';
-
 function convertDateToUTC(date) {
     return new Date(
         date.getUTCFullYear(),
@@ -54,7 +52,10 @@ function generateTable(data, doctor, onClickFunc) {
 
     // Populating the table with slots that are booked
     data.forEach((d) => {
-        const cell = document.getElementById(`${d.date}-${d.time}`);
+        const date = new Date(d.date + ' UTC');
+        const cell = document.getElementById(
+            `${date.toLocaleDateString()}-${date.getHours()}`
+        );
         cell.innerHTML = 'Booked';
         cell.onclick = () => false;
         cell.classList.remove('open-slot');
@@ -64,17 +65,49 @@ function generateTable(data, doctor, onClickFunc) {
     return table;
 }
 
+let bookingData;
+
 document.addEventListener('DOMContentLoaded', () => {
     // Show form on "Book Now!" button click
     document.getElementById('book-now').onclick = (e) => {
         if (!Object.keys(localStorage).includes('jwt')) {
             alert('Members only!');
         } else {
+            document.getElementById('remove').remove();
             const pages = document.getElementsByClassName('page');
             for (let i = 0; i < pages.length; i++) {
                 pages[i].classList.add('hidden');
             }
             document.getElementById('book').classList.remove('hidden');
+
+            // Update table
+            fetch('/booking/all', {
+                method: 'GET',
+                headers: {
+                    Authorization: 'Bearer ' + localStorage.getItem('jwt'),
+                },
+            })
+                .then((res) => {
+                    if (!res.ok) {
+                        localStorage.clear();
+                        alert('Please sign in again');
+                        window.location.pathname = '/creds.html';
+                    }
+                })
+                .then((res) => res.json())
+                .then((res) => {
+                    bookingData = res;
+                    let secondDoctor = document.getElementById('which-doctor');
+                    secondDoctor = doctor.options[doctor.selectedIndex].value;
+                    let secondTable = generateTable(res, secondDoctor, true);
+                    secondTable.id = 'yes-edit';
+                    document
+                        .getElementById('yes-edit')
+                        .replaceWith(secondTable);
+                })
+                .catch((err) => {
+                    alert('Something went wrong');
+                });
         }
     };
 
@@ -91,6 +124,15 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
+    // Update schedule for each doctor
+    document.getElementById('which-doctor').onchange = (e) => {
+        let doctor = e.target;
+        doctor = doctor.options[doctor.selectedIndex].value;
+        let table = generateTable(res, doctor, true);
+        table.id = 'yes-edit';
+        document.getElementById('yes-edit').replaceWith(table);
+    };
+
     // Submit appointment on submit
     document.getElementById('book-submit').onclick = (e) => {
         const token = localStorage.getItem('jwt');
@@ -103,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let doctor = document.getElementById('doctor');
             doctor = doctor.options[doctor.selectedIndex].value;
             const reason = document.getElementById('reason').value;
-            fetch(apiDomain + 'bookingRoute', {
+            fetch('/booking/add', {
                 method: 'POST',
                 headers: {
                     Authorization: 'Bearer ' + token,
@@ -116,7 +158,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }),
             })
                 .then((res) => {
-                    alert('Successful booking');
+                    if (!res.ok) {
+                        localStorage.clear();
+                        alert('Please sign in again');
+                        window.location.pathname = '/creds.html';
+                    } else {
+                        alert('Successful booking');
+                    }
                 })
                 .catch((err) => {
                     alert('Something went wrong!');
